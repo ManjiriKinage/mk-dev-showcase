@@ -85,7 +85,7 @@ function ProjectDetail() {
               Tech stack
             </div>
             <div className="mt-3 flex flex-wrap gap-1.5">
-              {project.stack.map((s) => (
+              {project.stack.map((s: string) => (
                 <span key={s} className="rounded-md border border-hairline px-2 py-1 font-mono text-[11px]">
                   {s}
                 </span>
@@ -112,12 +112,12 @@ function ProjectDetail() {
           <Block title="Problem">{project.problem}</Block>
           <Block title="Challenges">
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground">
-              {project.challenges.map((c) => <li key={c}>{c}</li>)}
+              {project.challenges.map((c: string) => <li key={c}>{c}</li>)}
             </ul>
           </Block>
           <Block title="Solutions">
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground">
-              {project.solutions.map((c) => <li key={c}>{c}</li>)}
+              {project.solutions.map((c: string) => <li key={c}>{c}</li>)}
             </ul>
           </Block>
 
@@ -151,12 +151,12 @@ function ProjectDetail() {
           <div className="grid gap-6 sm:grid-cols-2">
             <Block title="Lessons">
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground">
-                {project.lessons.map((c) => <li key={c}>{c}</li>)}
+                {project.lessons.map((c: string) => <li key={c}>{c}</li>)}
               </ul>
             </Block>
             <Block title="Future">
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground">
-                {project.future.map((c) => <li key={c}>{c}</li>)}
+                {project.future.map((c: string) => <li key={c}>{c}</li>)}
               </ul>
             </Block>
           </div>
@@ -168,7 +168,7 @@ function ProjectDetail() {
               Features
             </div>
             <ul className="mt-3 space-y-1.5 text-sm">
-              {project.features.map((f) => (
+              {project.features.map((f: string) => (
                 <li key={f} className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-brand" />
                   <span>{f}</span>

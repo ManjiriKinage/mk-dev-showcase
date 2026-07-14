@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/portfolio";
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
       { title: "Projects — Manjiri Kinage" },
