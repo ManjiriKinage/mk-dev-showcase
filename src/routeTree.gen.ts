@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as HackathonsRouteImport } from './routes/hackathons'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ExperienceRouteImport } from './routes/experience'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HackathonsRoute = HackathonsRouteImport.update({
   id: '/hackathons',
   path: '/hackathons',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/gallery'
     | '/hackathons'
+    | '/sitemap.xml'
     | '/projects/$slug'
     | '/projects/'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/gallery'
     | '/hackathons'
+    | '/sitemap.xml'
     | '/projects/$slug'
     | '/projects'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/gallery'
     | '/hackathons'
+    | '/sitemap.xml'
     | '/projects/$slug'
     | '/projects/'
   fileRoutesById: FileRoutesById
@@ -143,12 +155,20 @@ export interface RootRouteChildren {
   ExperienceRoute: typeof ExperienceRoute
   GalleryRoute: typeof GalleryRoute
   HackathonsRoute: typeof HackathonsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hackathons': {
       id: '/hackathons'
       path: '/hackathons'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperienceRoute: ExperienceRoute,
   GalleryRoute: GalleryRoute,
   HackathonsRoute: HackathonsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
