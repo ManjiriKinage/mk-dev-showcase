@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as HackathonsRouteImport } from './routes/hackathons'
-import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AchievementsRouteImport } from './routes/achievements'
@@ -28,11 +27,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const HackathonsRoute = HackathonsRouteImport.update({
   id: '/hackathons',
   path: '/hackathons',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperienceRoute = ExperienceRouteImport.update({
@@ -77,7 +71,6 @@ export interface FileRoutesByFullPath {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -89,7 +82,6 @@ export interface FileRoutesByTo {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -102,7 +94,6 @@ export interface FileRoutesById {
   '/achievements': typeof AchievementsRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/gallery': typeof GalleryRoute
   '/hackathons': typeof HackathonsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -116,7 +107,6 @@ export interface FileRouteTypes {
     | '/achievements'
     | '/contact'
     | '/experience'
-    | '/gallery'
     | '/hackathons'
     | '/sitemap.xml'
     | '/projects/$slug'
@@ -128,7 +118,6 @@ export interface FileRouteTypes {
     | '/achievements'
     | '/contact'
     | '/experience'
-    | '/gallery'
     | '/hackathons'
     | '/sitemap.xml'
     | '/projects/$slug'
@@ -140,7 +129,6 @@ export interface FileRouteTypes {
     | '/achievements'
     | '/contact'
     | '/experience'
-    | '/gallery'
     | '/hackathons'
     | '/sitemap.xml'
     | '/projects/$slug'
@@ -153,7 +141,6 @@ export interface RootRouteChildren {
   AchievementsRoute: typeof AchievementsRoute
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
-  GalleryRoute: typeof GalleryRoute
   HackathonsRoute: typeof HackathonsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
@@ -174,13 +161,6 @@ declare module '@tanstack/react-router' {
       path: '/hackathons'
       fullPath: '/hackathons'
       preLoaderRoute: typeof HackathonsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experience': {
@@ -241,7 +221,6 @@ const rootRouteChildren: RootRouteChildren = {
   AchievementsRoute: AchievementsRoute,
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
-  GalleryRoute: GalleryRoute,
   HackathonsRoute: HackathonsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,

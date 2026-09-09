@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { highlights, profile, skills, stats, timeline } from "@/data/portfolio";
+import portraitAsset from "@/assets/manjiri.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,10 +26,11 @@ function About() {
           <div className="mx-auto w-full max-w-xs">
             <div className="glass overflow-hidden rounded-3xl p-2">
               <div className="relative aspect-square overflow-hidden rounded-2xl bg-surface">
-                <div className="grid-bg absolute inset-0 opacity-40" />
-                <div className="absolute inset-0 grid place-items-center">
-                  <span className="text-gradient font-display text-8xl font-black">MK</span>
-                </div>
+                <img
+                  src={portraitAsset.url}
+                  alt="Portrait of Manjiri Kinage"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-2">

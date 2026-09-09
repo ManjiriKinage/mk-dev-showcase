@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Sparkles } from "lucide-react";
 import { profile, stats, projects } from "@/data/portfolio";
+import portraitAsset from "@/assets/manjiri.jpg.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -105,10 +106,11 @@ function Home() {
             <div className="absolute inset-0 rounded-full bg-gradient-brand opacity-25 blur-3xl" />
             <div className="absolute inset-6 rounded-full border border-hairline" />
             <div className="absolute inset-12 overflow-hidden rounded-full border border-hairline bg-surface">
-              <div className="grid-bg absolute inset-0 opacity-40" />
-              <div className="absolute inset-0 grid place-items-center">
-                <span className="font-display text-8xl font-black text-gradient">MK</span>
-              </div>
+              <img
+                src={portraitAsset.url}
+                alt="Portrait of Manjiri Kinage"
+                className="h-full w-full object-cover"
+              />
             </div>
             {floatingTech.map((t, i) => {
               const angle = (i / floatingTech.length) * Math.PI * 2;
