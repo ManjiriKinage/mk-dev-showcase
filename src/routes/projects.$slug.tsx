@@ -121,33 +121,6 @@ function ProjectDetail() {
             </ul>
           </Block>
 
-          <Block title="Architecture">
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["Client", "API", "Data"].map((t) => (
-                <div key={t} className="glass rounded-2xl p-4 text-center">
-                  <div className="font-mono text-xs text-muted-foreground">{t}</div>
-                  <div className="mt-2 h-24 rounded-lg border border-dashed border-hairline" />
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-muted-foreground">
-              Architecture & database diagrams — placeholders for detailed system design docs.
-            </p>
-          </Block>
-
-          <Block title="Screenshots">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[0, 1, 2, 3].map((i) => (
-                <div key={i} className="relative aspect-video overflow-hidden rounded-xl border border-hairline bg-surface">
-                  <div className="grid-bg absolute inset-0 opacity-30" />
-                  <div className="absolute inset-0 grid place-items-center font-mono text-xs text-muted-foreground">
-                    screenshot {i + 1}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Block>
-
           <div className="grid gap-6 sm:grid-cols-2">
             <Block title="Lessons">
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground">

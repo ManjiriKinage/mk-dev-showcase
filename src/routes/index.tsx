@@ -8,6 +8,16 @@ import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Manjiri Kinage — Software Developer" },
+      { name: "description", content: "Portfolio of Manjiri Kinage — Software Developer specializing in Java, Python, full-stack, backend, and AI-powered systems." },
+      { property: "og:title", content: "Manjiri Kinage — Software Developer" },
+      { property: "og:description", content: "Full-stack engineer building scalable software, AI-powered applications, and secure backend systems." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Home,
 });
 

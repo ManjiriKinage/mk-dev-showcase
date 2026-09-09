@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { Section } from "@/components/Section";
 import { profile } from "@/data/portfolio";
@@ -16,6 +16,20 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "visitor"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    );
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    setSent(true);
+  };
+
   return (
     <Section
       eyebrow="Contact"
@@ -23,32 +37,46 @@ function Contact() {
       description="Open to internships, full-time roles, and collaborations on hard software problems."
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
-          className="glass rounded-3xl p-6 sm:p-8"
-        >
+        <form onSubmit={handleSubmit} className="glass rounded-3xl p-6 sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Name">
-              <input required className="input" placeholder="Your name" />
+              <input
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="input"
+                placeholder="Your name"
+              />
             </Field>
             <Field label="Email">
-              <input required type="email" className="input" placeholder="you@example.com" />
+              <input
+                required
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="input"
+                placeholder="you@example.com"
+              />
             </Field>
           </div>
           <Field label="Message" className="mt-4">
-            <textarea rows={6} required className="input resize-none" placeholder="What are you building?" />
+            <textarea
+              rows={6}
+              required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="input resize-none"
+              placeholder="What are you building?"
+            />
           </Field>
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
               type="submit"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-elegant"
             >
               <Send className="h-4 w-4" /> Send message
             </button>
-            {sent && <span className="text-sm text-muted-foreground">Thanks — I'll reply soon.</span>}
+            {sent && <span className="text-sm text-muted-foreground">Thanks — your email app should open with the message ready to send.</span>}
           </div>
         </form>
 
@@ -65,7 +93,7 @@ function Contact() {
                 <div className="text-center">
                   <MapPin className="mx-auto h-6 w-6 text-primary" />
                   <div className="mt-2 font-semibold">Pune, India</div>
-                  <div className="text-xs text-muted-foreground">Map placeholder</div>
+                  <div className="text-xs text-muted-foreground">Based in Pune, open to remote & relocation</div>
                 </div>
               </div>
             </div>
