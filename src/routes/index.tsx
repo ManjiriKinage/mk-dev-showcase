@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Sparkles } from "lucide-react";
 import { profile, stats, projects } from "@/data/portfolio";
-import portraitAsset from "@/assets/manjiri.jpg.asset.json";
+import portraitImage from "@/assets/manjiri.jpg";
 import { Typewriter } from "@/components/Typewriter";
 import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -117,7 +117,7 @@ function Home() {
             <div className="absolute inset-6 rounded-full border border-hairline" />
             <div className="absolute inset-12 overflow-hidden rounded-full border border-hairline bg-surface">
               <img
-                src={portraitAsset.url}
+                src={portraitImage}
                 alt="Portrait of Manjiri Kinage"
                 className="h-full w-full object-cover"
               />

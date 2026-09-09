@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { highlights, profile, skills, stats, timeline } from "@/data/portfolio";
-import portraitAsset from "@/assets/manjiri.jpg.asset.json";
+import portraitImage from "@/assets/manjiri.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -27,7 +27,7 @@ function About() {
             <div className="glass overflow-hidden rounded-3xl p-2">
               <div className="relative aspect-square overflow-hidden rounded-2xl bg-surface">
                 <img
-                  src={portraitAsset.url}
+                  src={portraitImage}
                   alt="Portrait of Manjiri Kinage"
                   className="h-full w-full object-cover"
                 />
