@@ -10,7 +10,7 @@ export const profile = {
   phone: "+91-9146841254",
   github: "https://github.com/ManjiriKinage",
   linkedin: "https://www.linkedin.com/in/manjiri-kinage/",
-  resume: "/resume.pdf",
+  resume: "",
   summary:
     "Full-Stack Developer with hands-on experience building production-ready web applications using Python, Java, Flask, and Spring Boot. I design clean architectures, ship REST APIs, and build complete full-stack applications — from vulnerability management platforms to AI-powered fitness apps.",
 };

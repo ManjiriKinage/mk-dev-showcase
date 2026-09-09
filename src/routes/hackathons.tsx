@@ -30,17 +30,6 @@ function Hackathons() {
             <h3 className="mt-2 text-2xl font-bold">{h.name}</h3>
             <div className="mt-1 text-sm text-muted-foreground">Project: <span className="text-foreground">{h.project}</span></div>
             <p className="mt-4 text-sm text-muted-foreground">{h.desc}</p>
-
-            <div className="mt-6 grid grid-cols-3 gap-2">
-              {["Team", "Stage", "Judges"].map((tag) => (
-                <div key={tag} className="relative aspect-square overflow-hidden rounded-xl border border-hairline bg-surface">
-                  <div className="grid-bg absolute inset-0 opacity-30" />
-                  <div className="absolute inset-0 grid place-items-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    {tag}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         ))}
       </div>

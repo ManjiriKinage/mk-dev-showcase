@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { nav } from "@/data/portfolio";
 import { projects } from "@/data/portfolio";
 
-const BASE_URL = "";
+const BASE_URL = "https://mk-dev-showcase.lovable.app";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
