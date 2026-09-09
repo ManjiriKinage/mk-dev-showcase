@@ -88,6 +88,46 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "ai-finance-controller",
+    name: "AI Finance Controller",
+    tagline: "Full-Stack & AI Financial Automation Platform",
+    summary:
+      "High-throughput 5-stage reconciliation engine bridging Razorpay payments, settlement feeds, bank statements, and accounting ledgers — with Gemini-powered root-cause analysis of financial anomalies.",
+    stack: ["Python", "FastAPI", "Next.js", "React 19", "TypeScript", "Google Gemini API", "SQLAlchemy", "RapidFuzz", "Tailwind CSS", "Docker"],
+    features: [
+      "5-Stage Reconciliation Engine",
+      "Exact UTR Indexing",
+      "Fuzzy String Matching",
+      "Fee / GST Tolerance Checks",
+      "AI Root-Cause Analysis",
+      "Real-Time Audit Trails",
+      "7 & 30-Day Cash Flow Forecasts",
+    ],
+    problem:
+      "Finance teams manually reconcile payments, settlements, bank statements, and ledgers — slow, error-prone, and hard to audit. AI Finance Controller automates the entire pipeline with 100% precision and zero false matches.",
+    challenges: [
+      "Matching 10,000+ records/sec across four financial data sources.",
+      "Handling fee and GST arithmetic differences without false mismatches.",
+      "Explaining anomalies (fee mismatches, delayed settlements) without manual digging.",
+    ],
+    solutions: [
+      "Exact UTR indexing plus RapidFuzz fuzzy matching with fee/GST tolerance arithmetic.",
+      "Google Gemini LLM with function calling for automated root-cause analysis — cutting manual investigation time by 80%.",
+      "Next.js (React 19) + FastAPI dashboard for real-time audit trails and cash-flow prediction.",
+    ],
+    lessons: [
+      "Designing deterministic matching pipelines with LLMs on top, not inside.",
+      "High-throughput data engineering in Python.",
+      "Financial-domain modeling: settlements, fees, and GST.",
+    ],
+    future: ["Multi-gateway support", "Automated dispute filing", "ERP integrations"],
+    github: "https://github.com/ManjiriKinage/AI-Finance-Controller",
+    demo: "https://ai-finance-controller-pi.vercel.app/",
+    featured: true,
+    year: "2026",
+    team: "Solo",
+  },
+  {
     slug: "netscan",
     name: "NetScan",
     tagline: "Cybersecurity Vulnerability Management Platform",
@@ -121,7 +161,7 @@ export const projects: Project[] = [
       "Prompt design for reliable remediation output.",
     ],
     future: ["Agent-based continuous scanning", "SSO + RBAC", "Slack/Jira integrations"],
-    github: "https://github.com/ManjiriKinage",
+    github: "https://github.com/ManjiriKinage/NetScan-Finals",
     featured: true,
     year: "Feb 2026",
     team: "4",
@@ -157,7 +197,7 @@ export const projects: Project[] = [
     solutions: ["Layered Spring architecture", "Indexed queries + aggregations", "PDF/CSV export pipeline"],
     lessons: ["Spring Boot best practices", "Report generation patterns"],
     future: ["Bank statement import", "Forecasting"],
-    github: "https://github.com/ManjiriKinage",
+    github: "https://github.com/ManjiriKinage/Fintrack",
     featured: true,
     year: "May 2026",
     team: "Solo",
